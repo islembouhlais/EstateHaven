@@ -1,8 +1,14 @@
 package project.app.demo.seller;
 
 import org.springframework.stereotype.Service;
+import project.app.demo.conversation.conversationEntity;
+import project.app.demo.message.messageEntity;
+import project.app.demo.multimedia.multimediaEntity;
 import project.app.demo.property.propertyEntity;
 import project.app.demo.property.propertyInfoService;
+
+import java.util.List;
+
 @Service
 public class sellerInfoService {
 
@@ -17,8 +23,9 @@ public class sellerInfoService {
         seller_Repository.insertSeller(sellerEntity);
     }
 
-    public void add_property(sellerEntity seller, propertyEntity property){
-        this.propertyInfo_service.add_property(seller,property);
+    public void add_property(propertyEntity property){
+        this.propertyInfo_service.add_property(property);
     }
+
 
 }

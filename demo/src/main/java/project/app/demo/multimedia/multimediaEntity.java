@@ -1,5 +1,7 @@
 package project.app.demo.multimedia;
 
+import project.app.demo.property.propertyEntity;
+
 import java.sql.Timestamp;
 
 /*
@@ -16,6 +18,7 @@ public class multimediaEntity {
     private String data;
     private MULTIMEDIA_TYPE type;
     private Timestamp upload_date;
+    private propertyEntity property;
 
     public String getType() {
         return type.name();
@@ -24,6 +27,14 @@ public class multimediaEntity {
 
     public void setType(MULTIMEDIA_TYPE type) {
         this.type = type;
+    }
+
+    public propertyEntity getProperty() {
+        return property;
+    }
+
+    public void setProperty(propertyEntity property) {
+        this.property = property;
     }
 
     public String getTitle() {

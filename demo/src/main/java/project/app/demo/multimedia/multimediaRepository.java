@@ -24,7 +24,7 @@ file_path
 property_id
  */
     public void add_multimedia(multimediaEntity multimedia, propertyEntity property){
-        String sql="INSERT INTO (title,description,upload_date,type,property_id) values(?,?,?,?,?)";
+        String sql="INSERT INTO multimedia (title,description,upload_date,type,property_id) values(?,?,?,?,?)";
         try {
 
             jdbcTemplate.update(

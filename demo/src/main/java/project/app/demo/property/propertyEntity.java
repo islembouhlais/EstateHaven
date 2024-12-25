@@ -2,24 +2,29 @@ package project.app.demo.property;
 
 
 import org.springframework.stereotype.Service;
+import project.app.demo.conversation.conversationEntity;
+import project.app.demo.multimedia.multimediaEntity;
+import project.app.demo.seller.sellerEntity;
+import project.app.demo.visitRequest.visitRequestEntity;
 
 import java.sql.Timestamp;
 import java.util.List;
 
 @Service
 public class propertyEntity {
-    private int property_id;
+    private Integer property_id;
     private String title;
     private  String description;
     private double price;
     private String location;
     private Timestamp listed_date;
     private double area;
-    private int seller_id;
-    // private List<>
-    public int getProperty_id() {
-        return property_id;
-    }
+    private sellerEntity seller;
+    private List<conversationEntity> conversationEntityList;
+    private visitRequestEntity visitR;
+    private  List<multimediaEntity> multimediaEntities;
+
+
 
     public String getTitle() {
         return title;
@@ -37,6 +42,39 @@ public class propertyEntity {
         this.area = area;
     }
 
+    public List<conversationEntity> getConversationEntityList() {
+        return conversationEntityList;
+    }
+
+    public List<multimediaEntity> getMultimediaEntities() {
+        return multimediaEntities;
+    }
+
+    public void setMultimediaEntities(List<multimediaEntity> multimediaEntities) {
+        this.multimediaEntities = multimediaEntities;
+    }
+
+    public Integer getProperty_id() {
+        return property_id;
+    }
+
+    public void setProperty_id(Integer property_id) {
+        this.property_id = property_id;
+    }
+
+    public void setConversationEntityList(List<conversationEntity> conversationEntityList) {
+        this.conversationEntityList = conversationEntityList;
+    }
+
+
+    public sellerEntity getSeller() {
+        return seller;
+    }
+
+    public visitRequestEntity getVisitR() {
+        return visitR;
+    }
+
     public double getArea() {
         return area;
     }
@@ -49,12 +87,13 @@ public class propertyEntity {
         return listed_date;
     }
 
-    public int getSeller_id() {
-        return seller_id;
+
+    public void setVisitR(visitRequestEntity visitR) {
+        this.visitR = visitR;
     }
 
-    public void setProperty_id(int property_id) {
-        this.property_id = property_id;
+    public void setSeller(sellerEntity seller) {
+        this.seller = seller;
     }
 
     public void setTitle(String title) {
@@ -77,7 +116,4 @@ public class propertyEntity {
         this.location = location;
     }
 
-    public void setSeller_id(int seller_id) {
-        this.seller_id = seller_id;
-    }
 }

@@ -19,9 +19,9 @@ public class sellerRepository {
     }
 
     public void insertSeller(sellerEntity seller) {
-        int seller_id= userInfoService.Add_user(seller);
-        String sql = "INSERT INTO seller (seller_id,business_name) VALUES (?,?)";
-        if(seller_id!=-1) {
+       int seller_id= userInfoService.Add_user(seller);
+         String sql = "INSERT INTO seller (seller_id,business_name) VALUES (?,?)";
+
             try {
                 jdbcTemplate.update(
                         sql,
@@ -31,11 +31,8 @@ public class sellerRepository {
             } catch (DataAccessException e) {
                 throw new RuntimeException("Error inserting seller-specific data", e);
             }
-                         }
-        else {
-           //trow new exception doctor can not be found and print all necessary info on screen
-        }
-//        System.out.println(seller_id);
+
+
 
     }
 

@@ -1,6 +1,9 @@
 package project.app.demo.user;
 
+import project.app.demo.property.propertyEntity;
+
 import java.sql.Timestamp;
+import java.util.List;
 
 
 public class userEntity {
@@ -11,6 +14,7 @@ public class userEntity {
     protected String password_hash;
     protected Timestamp created_at;
 
+
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
@@ -18,6 +22,8 @@ public class userEntity {
     public void setUsername(String username) {
         this.username = username;
     }
+
+
 
     public void setEmail(String email) {
         this.email = email;
