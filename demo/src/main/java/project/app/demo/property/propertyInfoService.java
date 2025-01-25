@@ -14,17 +14,25 @@ public class propertyInfoService {
     private final propertyRepository property_repository;
     private  final multimediaInfoService multimediaInfo_Service;
 
+    public List<propertyEntity> findProprtyByWilaya(String wilaya){
+        return property_repository.getPropertiesByWilaya(wilaya);
+    }
+
 
     public propertyInfoService(propertyRepository property_repository,multimediaInfoService multimediaInfoService) {
         this.property_repository = property_repository;
         this.multimediaInfo_Service = multimediaInfoService;
     }
-    public void add_property(propertyEntity property) {
+    public int add_property(propertyEntity property) {
       int id_pro = property_repository.add_property(property);
+       property.setProperty_id(id_pro);
+        for (optionalParts op:property.getOptional_parts()) {
+            property_repository.insertOptionalRoomProperty(property_repository.findOptionalRoomIdByName(op.name()),id_pro);
+        }
 
         for (multimediaEntity mlt : property.getMultimediaEntities()) {
-            mlt.getProperty().setProperty_id(id_pro);
             multimediaInfo_Service.add_multimedia(mlt,property);
         }
+        return id_pro;
         }
 }

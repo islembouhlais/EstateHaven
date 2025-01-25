@@ -9,7 +9,8 @@ import java.util.List;
 public class userEntity {
 
     protected int user_id;
-    protected String username;
+    protected String firstname;
+    protected String lastname;
     protected String email;
     protected String password_hash;
     protected Timestamp created_at;
@@ -19,11 +20,22 @@ public class userEntity {
         this.user_id = user_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+
+    public String getFirstname() {
+        return firstname;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
 
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -41,9 +53,6 @@ public class userEntity {
         return user_id;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
     public String getEmail() {
         return email;

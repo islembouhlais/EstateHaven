@@ -24,7 +24,18 @@ public class userInfoService {
     public int Add_user(userEntity user){
       return user_Repository.insertUser(user);
    }
+    public Session find_user(userEntity user){
+       userEntity User_ =user_Repository.find_user(user);
+        if(User_==null) return  null;
+        int user_id=User_.getUser_id();
+        String role=user_Repository.getRoleById(user_id);
+        int id_session=user_Repository.insertSession(role);
+       Session session=new Session();
+       session.setRole(role);
+       session.setSession_id(id_session);
+        return session ;
 
+    }
 
 
 

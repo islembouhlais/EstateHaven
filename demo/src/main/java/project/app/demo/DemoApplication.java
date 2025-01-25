@@ -24,35 +24,6 @@ public class DemoApplication {
 
 		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
-		sellerInfoService userDao = context.getBean(sellerInfoService.class);
-		userInfoService userDao2 = context.getBean(userInfoService.class);
-
-		sellerEntity seller_Entity=new sellerEntity();
-		seller_Entity.setEmail("abaday@eston.dz");
-		seller_Entity.setUsername("90lkabaday");
-		seller_Entity.setUser_id(14);
-		seller_Entity.setPassword_hash("a2222222222ichiaichi");
-		seller_Entity.setBusiness_name("dkkd");
-		LocalDateTime localDateTime = LocalDateTime.of(2024, 12, 14, 15, 30, 0);
-		Timestamp timestamp = Timestamp.valueOf(localDateTime);
-		seller_Entity.setCreated_at(timestamp);
-		//-------------------------------------------------
-		propertyEntity property=new propertyEntity();
-		property.setArea(1299.11);
-		property.setTitle("house in constantine with pool");
-		property.setLocation("25 ee khroub");
-		property.setDescription("el khroub constantine");
-		property.setPrice(122.12);
-		//-------------------------------------------------
-		multimediaEntity mlt=new multimediaEntity();
-		mlt.setData("issikwiwkk21i2kwsks201sk");
-		mlt.setType(MULTIMEDIA_TYPE.PHOTO);
-		mlt.setTitle("oslllllllllls");
-		List<multimediaEntity> multimediaEntityList=new ArrayList<>();
-		multimediaEntityList.add(mlt);
-
-		//userDao.add_seller(seller_Entity);
-		//userDao.add_property(seller_Entity,property,multimediaEntityList);
 
 	}
 }
